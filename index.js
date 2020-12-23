@@ -3,13 +3,15 @@ const mongoose = require('mongoose')
 const { User } = require('./models/user')
 const bodyParser = require('body-parser')
 
+const config = require('./config/key')
+
 const app = express()
 
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())
 const port = 5000
 
-mongoose.connect('mongodb+srv://JuhwanKim:123456789a@cluster0.dv0wl.mongodb.net/test?retryWrites=true', 
+mongoose.connect(config.mongoURI, 
 {
     useNewUrlParser : true, useUnifiedTopology : true, useCreateIndex : true, useFindAndModify : false
 }).then(() => console.log('MongoDB connected!'))
