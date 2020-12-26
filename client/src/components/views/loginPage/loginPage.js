@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 //import { useDispatch } from 'react-redux'
 import { loginUser } from "../../../_actions/user_action";
-
+import {withRouter} from 'react-router-dom'
 function LoginPage(props) {
   const dispatch = useDispatch();
   const [Email, setEmail] = useState("");
@@ -56,9 +56,14 @@ function LoginPage(props) {
         <input type="password" value={Password} onChange={onPasswordHandler} />
         <br />
         <button>Login</button>
+        <a href="/register">Sign up</a>
       </form>
+     
+      
     </div>
+    
+    
   );
 }
 
-export default LoginPage;
+export default withRouter(LoginPage);
