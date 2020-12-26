@@ -1,18 +1,28 @@
-import React, { useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from "react";
+import axios from "axios";
 
-function LandingPage() {
+function LandingPage(props) {
+  useEffect(() => {
+    axios.get("/api/hello").then((res) => console.log(res.data));
+  }, []);
 
-    useEffect(() => {
-        axios.get('/api/hello')
-        .then(res => console.log(res.data))
-    }, [])
+  const onClickHandler = () => {
+    axios.get("/api/users/logout").then((res) => {
+      if (res.data.success) props.history.push("/login");
+    });
+  };
 
-    return (
-        <div>
-            landingPage
-        </div>
-    )
+  return (
+    <div>
+      landingPage
+      <br />
+      <a href="/login">login</a>
+      <br />
+      <a href="/register">sign up</a>
+      <br />
+      <button onClick={onClickHandler}>log out</button>
+    </div>
+  );
 }
 
-export default LandingPage
+export default LandingPage;
