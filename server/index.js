@@ -22,7 +22,7 @@ mongoose.connect(config.mongoURI, {
 
 app.get('/', (req, res) => res.send('Hello World!~~ '))
 
-app.get('/api/hello', (req, res) => res.send('Hello World!~~ '))
+app.get('/api/hello', (req, res) => res.send('Hello World!~~ JJ'))
 
 app.post('/api/users/register', (req, res) => {
 
