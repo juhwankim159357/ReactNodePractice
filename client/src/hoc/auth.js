@@ -15,6 +15,7 @@ export default function (Specific, option, adminRoute = null) {
 
                 if(!res.payload.isAuth){
                     if(option) {
+                        console.log(res)
                         props.history.push('/login')
                     }
                 }else{
