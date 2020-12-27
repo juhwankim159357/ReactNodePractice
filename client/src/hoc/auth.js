@@ -10,6 +10,7 @@ export default function (Specific, option, adminRoute = null) {
         useEffect(()=>{
             dispatch(auth()).then(res => {
                 console.log(res)
+                console.log(res.payload.isAuth)
 
 
                 if(!res.payload.isAuth){
