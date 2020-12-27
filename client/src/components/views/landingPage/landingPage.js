@@ -3,11 +3,11 @@ import axios from "axios";
 import {withRouter} from 'react-router-dom'
 function LandingPage(props) {
   useEffect(() => {
-    axios.get("https://loginappprac.herokuapp.com/api/hello").then((res) => console.log(res.data));
+    axios.get("/api/hello").then((res) => console.log(res.data));
   }, []);
 
   const onClickHandler = () => {
-    axios.get("https://loginappprac.herokuapp.com/api/users/logout").then((res) => {
+    axios.get("/api/users/logout").then((res) => {
       if (res.data.success) props.history.push("/login");
     });
   };
