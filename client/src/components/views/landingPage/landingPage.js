@@ -3,7 +3,7 @@ import axios from "axios";
 import {withRouter} from 'react-router-dom'
 function LandingPage(props) {
   useEffect(() => {
-    axios.get("/api/hello").then((res) => console.log(res.data));
+    axios.get("https://fervent-einstein-b3e38f.netlify.app/api/hello").then((res) => console.log(res.data));
   }, []);
 
   const onClickHandler = () => {
