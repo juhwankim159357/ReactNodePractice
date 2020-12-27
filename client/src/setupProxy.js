@@ -4,7 +4,7 @@ module.exports = function(app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'https://loginappprac.herokuapp.com/',
+            target: 'https://fervent-einstein-b3e38f.netlify.app/',
             changeOrigin: true,
         })
     )
