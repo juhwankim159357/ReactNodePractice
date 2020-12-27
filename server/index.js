@@ -4,8 +4,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const config = require('./config/key');
 const { auth } = require('./middleware/auth');
-const { User } = require("./models/User");
-
+const { User } = require("./models/user");
+const mongoose = require('mongoose')
+//test
 //application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const mongoose = require('mongoose')
+
 mongoose.connect(config.mongoURI, {
   useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected...'))
@@ -109,4 +110,4 @@ app.get('/api/users/logout', auth, (req, res) => {
 
 const port = 5000
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(process.env.PORT || port, () => console.log(`Example app listening on port ${port}!`))
