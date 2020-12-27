@@ -20,7 +20,7 @@ export function registerUser(data) {
 }
 
 export function auth() {
-  const req = axios.get("https://fervent-einstein-b3e38f.netlify.app/api/users/auth").then(res => res.data)
+  const req = axios.get("https://loginappprac.herokuapp.com/api/users/auth").then(res => res.data)
 
   return {
     type: AUTH_USER,
