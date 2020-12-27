@@ -7,7 +7,7 @@ function LandingPage(props) {
   }, []);
 
   const onClickHandler = () => {
-    axios.get("/api/users/logout").then((res) => {
+    axios.get("https://fervent-einstein-b3e38f.netlify.app/api/users/logout").then((res) => {
       if (res.data.success) props.history.push("/login");
     });
   };
