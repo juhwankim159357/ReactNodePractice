@@ -6,9 +6,13 @@ const config = require('./config/key');
 const { auth } = require('./middleware/auth');
 const { User } = require("./models/user");
 const mongoose = require('mongoose')
+const cors = require('cors');
+
 //test
 //application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
 
 //application/json 
 app.use(bodyParser.json());
