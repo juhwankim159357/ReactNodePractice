@@ -7,7 +7,7 @@ function LandingPage(props) {
   }, []);
 
   const onClickHandler = () => {
-    axios.get("/api/users/logout").then((res) => {
+    axios.get("https://loginappprac.herokuapp.com/api/users/logout").then((res) => {
       if (res.data.success) props.history.push("/login");
     });
   };
